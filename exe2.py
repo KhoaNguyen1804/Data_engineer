@@ -1,21 +1,21 @@
-def two_sum(nums, target):
-    num_map = {} 
+def reverse_integer(x):
+    # Check if the number is negative
+    is_negative = x < 0
 
-    for i, num in enumerate(nums):
-        complement = target - num
+    # Convert the number to positive for reversing the digits
+    x = abs(x)
 
-        if complement in num_map:
-            return [num_map[complement], i]
+    # Reverse the digits by converting the number to a string and reversing it
+    reversed_str = str(x)[::-1]
 
-        num_map[num] = i
+    # Convert the reversed string back to an integer
+    reversed_num = int(reversed_str)
 
-    return []  
+    # Check if the reversed number exceeds the 32-bit signed integer range
+    if reversed_num > 2**31 - 1:
+        return 0
 
-nums = [0, 1, 2, 3, 4, 5, 6, 7, 8]
-target = 13
+    # Return the reversed number with the appropriate sign
+    return -reversed_num if is_negative else reversed_num
 
-indices = two_sum(nums, target)
-if indices:
-    print(f"The indices are: {indices}")
-else:
-    print("No solution found.")
+print(reverse_integer(123))
