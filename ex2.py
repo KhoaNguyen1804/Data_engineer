@@ -1,4 +1,4 @@
-def reverse_integer(x):
+def reverse(x):
     # Check if the number is negative
     is_negative = x < 0
 
@@ -19,4 +19,4 @@ def reverse_integer(x):
     return -reversed_num if is_negative else reversed_num
 
 # if number bigger than 32-bit signed integer will be 0
-print(reverse_integer(999999999999999999))
+print(reverse(-210))
